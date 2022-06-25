@@ -6,10 +6,12 @@ const Add: React.FC = () => {
 
   useEffect(() => {
     const sum = add(1, 2);
-    setFirst(sum);
+    setFirst(3);
   }, []);
 
   return <div>{first}</div>;
 };
+
+console.log(add(1, 2));
 
 export default Add;
