@@ -1,0 +1,9 @@
+lockfileVersion: 5.4
+
+importers:
+
+  packages/component:
+    specifiers:
+      '@pt/utils': workspace:^1.0.0
+    dependencies:
+      '@pt/utils': link:../utils
