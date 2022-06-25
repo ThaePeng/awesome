@@ -1,8 +1,10 @@
 const path = require("path");
+const TerserPlugin = require("terser-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "production",
-  entry: "./packages/component/Add/index.tsx",
+  mode: "development",
+  entry: "./packages/web/index.tsx",
   output: {
     clean: true,
     filename: "bundle.js",
@@ -11,13 +13,25 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(js|ts|tsx)$/,
         exclude: /node_modules/,
         use: ["babel-loader"],
       },
     ],
   },
+  // optimization: {
+  //   minimizer: [
+  //     new TerserPlugin({
+  //       extractComments: false, //禁止生成注释到LICENSE.txt
+  //     }),
+  //   ],
+  // },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./packages/web/index.html",
+    }),
+  ],
   resolve: {
-    extensions: ['.ts', '.tsx']
-  }
+    extensions: [".ts", ".tsx", ".js"],
+  },
 };
