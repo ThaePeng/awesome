@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { Circle } from "@pt/component";
 
 const App = () => {
   return (
-    <div>Hello React!</div>
-  )
-}
+    <div>
+      <Circle></Circle>
+    </div>
+  );
+};
 
-export default App
+export default App;
